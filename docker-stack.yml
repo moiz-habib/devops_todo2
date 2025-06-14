@@ -1,6 +1,6 @@
 services:
   backend:
-    image: ghcr.io/moiz-habib/devops_todo/fastapi-todo:latest
+    image: ghcr.io/moiz-habib/devops_todo2/fastapi-todo:latest
     environment:
       - DATABASE_URL=${DATABASE_URL}
       - FRONTEND_URL=${FRONTEND_URL}
@@ -12,7 +12,7 @@ services:
         parallelism: 1
         delay: 5s
   frontend:
-    image: ghcr.io/moiz-habib/devops_todo/todo-frontend:latest
+    image: ghcr.io/moiz-habib/devops_todo2/todo-frontend:latest
     environment:
       - NEXT_PUBLIC_API_URL=http://backend:8000
     ports:

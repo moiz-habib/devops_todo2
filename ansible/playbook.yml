@@ -73,7 +73,7 @@
             git pull
         else
           GIT_SSH_COMMAND='ssh -i /home/ubuntu/.ssh/id_rsa -o StrictHostKeyChecking=no' \
-            git clone git@github.com:moiz-habib/devops_todo.git /opt/todo-app
+            git clone git@github.com:moiz-habib/devops_todo2.git /opt/todo-app
         fi
       args:
         executable: /bin/bash
@@ -133,13 +133,13 @@
 
     - name: Pull latest backend image from GHCR
       community.docker.docker_image:
-        name: ghcr.io/{{ ghcr_user }}/devops_todo/fastapi-todo
+        name: ghcr.io/{{ ghcr_user }}/devops_todo2/fastapi-todo
         tag: latest
         source: pull
 
     - name: Pull latest frontend image from GHCR
       community.docker.docker_image:
-        name: ghcr.io/{{ ghcr_user }}/devops_todo/todo-frontend
+        name: ghcr.io/{{ ghcr_user }}/devops_todo2/todo-frontend
         tag: latest
         source: pull
 
