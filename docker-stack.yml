@@ -1,0 +1,26 @@
+services:
+  backend:
+    image: ghcr.io/moiz-habib/devops_todo/fastapi-todo:latest
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - FRONTEND_URL=${FRONTEND_URL}
+    ports:
+      - "8000:8000"
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 5s
+  frontend:
+    image: ghcr.io/moiz-habib/devops_todo/todo-frontend:latest
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:8000
+    ports:
+      - "80:3000"
+    depends_on:
+      - backend
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 5s

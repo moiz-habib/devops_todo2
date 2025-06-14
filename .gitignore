@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.env
+
+# Node
+node_modules/
+.next/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Ignore SSH keys
+swarm_key
+swarm_deploy_key
