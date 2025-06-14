@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 locals {
-  key_path = "${path.module}/swarm_key.pub"
+  key_path = "${path.module}/swarm-key.pub"
 }
 
 resource "aws_key_pair" "deploy" {
